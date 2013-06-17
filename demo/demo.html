@@ -4,10 +4,11 @@
 <meta charset="utf-8">
 <meta name="author" content="Vivian Huang">
 <meta name="created" content="2013-05-31">
-<meta name="modified" content="Mon 17 Jun 2013 04:49:06 PM CST">
+<meta name="modified" content="Mon 17 Jun 2013 05:07:40 PM CST">
 <title>jsTree Prototype</title>
 <link rel="stylesheet" href="../src/jstree.css">
 <link rel="stylesheet" href="css/jquery.jstree.css">
+<link rel="stylesheet" href="../jstree-v.pre1.0/themes/miii/style.css">
 <script type="text/javascript" src="../libs/jquery.js"></script>
 <script type="text/javascript" src="../jstree-v.pre1.0/jquery.jstree.js"></script>
 <!--<script type="text/javascript" src="js/jquery.jstree.js"></script>-->
@@ -52,7 +53,7 @@
             $("#demo1").jstree({
                 "plugins" : ["themes", "json_data", "ui", "dnd", "types", "checkbox"],
                 "themes" : {
-                    "theme" : "classic",
+                    "theme" : "miii",
                     "dots" : true,
                     "icons" : true
                 },
@@ -119,7 +120,7 @@
                             ]
                         }
                     ]
-                },
+                }/*,
                 "types": {
                     "types": {
                         "default": {
@@ -139,7 +140,7 @@
                             }
                         }
                     }
-                }
+                }*/
             }).bind("loaded", function (e, data) {
                 console.log("loaded");
                 console.log(data);
