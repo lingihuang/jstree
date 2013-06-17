@@ -4,15 +4,13 @@
 <meta charset="utf-8">
 <meta name="author" content="Vivian Huang">
 <meta name="created" content="2013-05-31">
-<meta name="modified" content="Fri 14 Jun 2013 07:34:38 PM CST">
+<meta name="modified" content="Mon 17 Jun 2013 04:37:24 PM CST">
 <title>jsTree Prototype</title>
 <link rel="stylesheet" href="../src/jstree.css">
 <link rel="stylesheet" href="css/jquery.jstree.css">
 <script type="text/javascript" src="../libs/jquery.js"></script>
-<!--<script type="text/javascript" src="../src/jstree.js"></script>
-<script type="text/javascript" src="../src/jstree.json.js"></script>
-<script type="text/javascript" src="../src/jstree.html.js"></script>-->
-<script type="text/javascript" src="js/jquery.jstree.js"></script>
+<script type="text/javascript" src="../jstree-v.pre1.0/jquery.jstree.js"></script>
+<!--<script type="text/javascript" src="js/jquery.jstree.js"></script>-->
 <style type="text/css">
 
 </style>
@@ -44,7 +42,7 @@
     <div id="demo" class="demo" style="height:200px;"></div>
 
     <div id="demo1" class="demo"></div>
-    
+
 
     <script type="text/javascript">
         // http://luban.danse.us/jazzclub/javascripts/jquery/jsTree/reference/_examples/5_others.html
@@ -144,13 +142,13 @@
                 }
             }).bind("loaded", function (e, data) {
                 console.log("loaded");
-                console.log(data); 
+                console.log(data);
             }).bind("open_node.jstree", function (e, data) {
                 console.log("open_node.jstree");
-                console.log(data); 
-            }).bind("select_node.jstree", function (e, data) { 
+                console.log(data);
+            }).bind("select_node.jstree", function (e, data) {
                 console.log("select_node.jstree");
-                console.log(data); 
+                console.log(data);
             });
 
 
