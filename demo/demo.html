@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="author" content="Vivian Huang">
 <meta name="created" content="2013-05-31">
-<meta name="modified" content="Tue 18 Jun 2013 02:06:01 PM CST">
+<meta name="modified" content="Wed 19 Jun 2013 04:44:24 PM CST">
 <title>jsTree Prototype</title>
 <link rel="stylesheet" href="../src/jstree.css">
 <link rel="stylesheet" href="css/jquery.jstree.css">
@@ -42,35 +42,35 @@
                     "attr": {"id": "g001", "rel": "folder"},
                     "data": {
                         "title": "Personals",
-                        "attr": {"href": "#", "class": "liClass"}
+                        "attr": {"href": "#", "class": "folder"}
                     }
                 },
                 {
                     "attr": {"id": "g002", "rel": "folder_photo"},
                     "data": {
                         "title": "Photos",
-                        "attr": {"href": "#", "class": "liClass"}
+                        "attr": {"href": "#", "class": "folder"}
                     },
                     "children": [
                         {
                             "attr": {"id": "g003", "rel": "folder_photo"},
                             "data": {
                                 "title": "Photo Directory 1",
-                                "attr": {"href": "#", "class": "liClass"}
+                                "attr": {"href": "#", "class": "folder"}
                             }
                         },
                         {
                             "attr": {"id": "g004", "rel": "folder_photo"},
                             "data": {
                                 "title": "Photo Directory 2",
-                                "attr": {"href": "#", "class": "liClass"}
+                                "attr": {"href": "#", "class": "folder"}
                             }
                         },
                         {
                             "attr": {"id": "f001", "rel": "default"},
                             "data": {
                                 "title": "Photo File 1",
-                                "attr": {"href": "#", "class": "liClass"}
+                                "attr": {"href": "#", "class": "file"}
                             }
                         }
                     ]
@@ -79,21 +79,21 @@
                     "attr": {"id": "g005", "rel": "folder_music"},
                     "data": {
                         "title": "Music",
-                        "attr": {"href": "#", "class": "liClass"}
+                        "attr": {"href": "#", "class": "folder"}
                     },
                     "children": [
                         {
                             "attr": {"id": "g006", "rel": "folder_music"},
                             "data": {
                                 "title": "Music Directory",
-                                "attr": {"href": "#", "class": "liClass"}
+                                "attr": {"href": "#", "class": "folder"}
                             }
                         },
                         {
                             "attr": {"id": "f002", "rel": "default"},
                             "data": {
                                 "title": "Music File 1",
-                                "attr": {"href": "#", "class": "liClass"}
+                                "attr": {"href": "#", "class": "file"}
                             }
                         }
                     ]
@@ -102,21 +102,21 @@
                     "attr": {"id": "g005", "rel": "folder_video"},
                     "data": {
                         "title": "Video",
-                        "attr": {"href": "#", "class": "liClass"}
+                        "attr": {"href": "#", "class": "folder"}
                     },
                     "children": [
                         {
                             "attr": {"id": "g007", "rel": "folder_video"},
                             "data": {
                                 "title": "Video Directory",
-                                "attr": {"href": "#", "class": "liClass"}
+                                "attr": {"href": "#", "class": "folder"}
                             }
                         },
                         {
                             "attr": {"id": "f002", "rel": "default"},
                             "data": {
                                 "title": "Vidoe File 1",
-                                "attr": {"href": "#", "class": "liClass"}
+                                "attr": {"href": "#", "class": "file"}
                             }
                         }
                     ]
@@ -191,9 +191,10 @@
                     override_ui: true,
                     //real_checkboxes: true
                 }
-            }).bind("loaded", function (e, data) {
-                console.log("loaded");
+            }).bind("load_node.jstree", function (e, data) {
+                console.log("load_node.jstree");
                 console.log(data);
+                $("a.folder .jstree-checkbox", $(this)).hide();
             }).bind("open_node.jstree", function (e, data) {
                 console.log("open_node.jstree");
                 console.log(data);
@@ -215,6 +216,9 @@
                 },
                 "json_data": {
                     "data": data
+                },
+                "checkbox": {
+                    override_ui: true
                 },
                 "types": {
                     "types": {
@@ -250,9 +254,9 @@
                         }
                     }
                 }
-            }).bind("loaded", function (e, data) {
-                console.log("loaded");
-                console.log(data);
+            }).bind("load_node.jstree", function (e, data) {
+                console.log("load_node.jstree");
+                $("a.folder .jstree-checkbox", $(this)).hide();
             }).bind("open_node.jstree", function (e, data) {
                 console.log("open_node.jstree");
                 console.log(data);
