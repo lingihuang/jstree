@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="author" content="Vivian Huang">
 <meta name="created" content="2013-05-31">
-<meta name="modified" content="Wed 19 Jun 2013 04:44:24 PM CST">
+<meta name="modified" content="Wed 19 Jun 2013 05:08:29 PM CST">
 <title>jsTree Prototype</title>
 <link rel="stylesheet" href="../src/jstree.css">
 <link rel="stylesheet" href="css/jquery.jstree.css">
@@ -132,6 +132,9 @@
                 },
                 "json_data": {
                     "data": data
+                },
+                "ui": {
+                    "select_limit": 1
                 }
             }).bind("open_node.jstree", function (e, data) {
                 console.log("open_node.jstree");
